@@ -4,29 +4,37 @@ using namespace std;
 int main (){
 	int i=0, j=0,md=0,ad=0,p=0,q=0;
 	
+	//Defining the matrix(2d array)
 	
 	cout<<"Define the square matrix"<<endl;
 	cout<<"Number of Rows and columns:";
 	cin>>p;
 	int ar[p][p];
 	
+	//inserting values to the matrix
 	cout<<"insert values for the matrix"<<endl;
 	for ( int i = 0; i < p; i++ )
-      for ( int j = 0; j < p; j++ ) {
+          for ( int j = 0; j < p; j++ ) {
       
          cout << "[" << i << "][" << j << "]: ";
          cin>> ar[i][j];
       }
+      
+      //Assign i & j to 0 since we must run the while loop to get the sum of the main diagonal
 	i=0;
 	j=0;
+	//sum of the main diagonal
 	while(i<p && j<p)
 	{
 		md+=ar[i][j];
 		i++;
 		j++;
 	}
+	
+	//assign i=0 and j=p-1 before the loop that add the anti-diagonal
 	i=0;
 	j=j-1;
+	//sum of the anti diagonal
 	while(i<p && j>=0)
 	{
 		ad+= ar[i][j];
